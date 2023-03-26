@@ -10,7 +10,13 @@ import {
 } from '@remix-run/react';
 import NavigationSwitcher from '~/nav';
 
-import mainCss from '~/styles/main.css';
+// import stylesheet from '~/styles/main.css';
+
+import stylesheet from "~/tailwind.css";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
 
 export function loader({ request }: LoaderArgs) {
   return {
@@ -31,15 +37,6 @@ export const meta: MetaFunction<typeof loader> = ({ data: { host } }) => ({
   'twitter:image:alt': 'The Vercel and Remix logos',
   viewport: 'width=device-width,initial-scale=1',
 });
-
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: mainCss,
-    },
-  ];
-};
 
 export default function App() {
   return (

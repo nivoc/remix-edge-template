@@ -42,7 +42,6 @@ export default function App() {
   return (
     <>
       <main>
-        <Illustration />
         <div className="meta">
           <div className="info">
             <span>Proxy Region</span>

@@ -15,7 +15,7 @@ export async function loader({ request }: LoaderArgs) {
   const wasCold = isCold;
   isCold = false;
 
-  const parsedId = parseVercelId(request.headers.get("x-vercel-id"));
+  const parsedId = parseVercelId(request.headers.get('x-vercel-id'));
 
   return {
     ...parsedId,
@@ -35,10 +35,9 @@ export default function App() {
   return (
     <>
       <main>
-        <Illustration />
-        <div className="meta">
+        <div className="bg-gray-400">
           <div className="info">
-            <span>Proxy Region</span>
+            <span className="flex text-left text-6xl  ">Proxy Region</span>
             <Region region={proxyRegion} />
           </div>
           <div className="info">
